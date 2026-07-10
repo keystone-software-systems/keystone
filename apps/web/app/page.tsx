@@ -39,7 +39,7 @@ export default function Home() {
             description:
               "Software engineering consultancy providing architecture, technical strategy, and senior-level engineering judgment for growing companies.",
             areaServed: "Worldwide",
-            serviceType: solutions.map((s) => s.title),
+            serviceType: solutions.map((s) => s.category),
           }),
         }}
       />
@@ -112,9 +112,10 @@ export default function Home() {
           <p className="mt-4 max-w-2xl text-lg text-blueprint-navy">
             Keystone Systems is led by a Senior/Staff-level software engineer currently working
             at Cedar, with prior experience as a Principal Software Engineer at Microsoft and an
-            engineering role at Stripe. That background shapes how engagements are scoped:
-            long-term defensibility, architecture tradeoffs, and systems-level design, not just
-            code that ships.
+            engineering role at Stripe, building systems that processed billions of dollars in
+            transactions a day. That background shapes how engagements are scoped: long-term
+            defensibility, architecture tradeoffs, and systems built to hold up under real load,
+            not just a demo.
           </p>
           <Link
             href="/about"

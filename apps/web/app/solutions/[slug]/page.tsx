@@ -17,11 +17,11 @@ export async function generateMetadata({
   if (!solution) return {};
 
   return {
-    title: solution.title,
+    title: solution.category,
     description: solution.description,
     alternates: { canonical: `/solutions/${solution.slug}` },
     openGraph: {
-      title: solution.title,
+      title: solution.category,
       description: solution.description,
     },
   };

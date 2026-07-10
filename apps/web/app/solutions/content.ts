@@ -3,7 +3,8 @@ import type { Solution } from "@/lib/solutions";
 export const solutions: Solution[] = [
   {
     slug: "net-new-development",
-    title: "Net New Development",
+    title: "New Development",
+    category: "Net New Development",
     headline: "A greenfield build, done right the first time",
     description:
       "For companies that need new software built from scratch, not fast and disposable. We scope the architecture up front, make the calls that are expensive to reverse later, and build a system your team can maintain long after the engagement ends.",
@@ -20,10 +21,11 @@ export const solutions: Solution[] = [
   },
   {
     slug: "vibe-code-to-production",
-    title: "Vibe-Code to Production",
+    title: "Production Hardening",
+    category: "Vibe-Code to Production",
     headline: "Take your AI-generated prototype to production, safely",
     description:
-      "AI tools make it easy to get a working prototype fast. They don't make it production-ready. We audit what's there, fix the parts that will break under real users, and harden the system so it can actually run your business.",
+      "AI tools make it easy to get a working prototype fast. They don't make it production-ready, and they don't tell you whether it'll hold up if usage takes off. We audit what's there, fix the parts that will break under real users, and harden the system so it can handle real growth, not just a demo.",
     whoFor: [
       "Non-technical or semi-technical founders with a working AI-built MVP",
       "Teams that vibe-coded a prototype and now have real users or funding",
@@ -32,12 +34,13 @@ export const solutions: Solution[] = [
     whatYouGet: [
       "A clear-eyed technical assessment of what's solid and what isn't",
       "Fixes to the architecture, data model, and security gaps that matter most",
-      "A system that's ready for real users, not just a demo",
+      "A system that's ready for real users and real growth, not just a demo",
     ],
   },
   {
     slug: "business-process-automation",
-    title: "Business Process Automation",
+    title: "Process Automation",
+    category: "Business Process Automation",
     headline: "Automate the manual work that's slowing your team down",
     description:
       "Every growing company accumulates manual, repetitive, error-prone workflows. We find the ones worth automating, build the automation, and integrate it into how your team already works.",
@@ -54,7 +57,8 @@ export const solutions: Solution[] = [
   },
   {
     slug: "acquisition-due-diligence",
-    title: "Acquisition Due Diligence",
+    title: "Due Diligence",
+    category: "Acquisition Due Diligence",
     headline: "Know what you're buying before you close",
     description:
       "An independent technical assessment of a target company's codebase, architecture, and engineering risk, delivered before the deal closes. We look at what a buyer actually needs to know: technical debt, scalability, security posture, and the true cost of maintaining what's there.",
@@ -71,7 +75,8 @@ export const solutions: Solution[] = [
   },
   {
     slug: "ai-training-setup",
-    title: "AI Training & Setup",
+    title: "AI Training",
+    category: "AI Training & Setup",
     headline: "Stand up AI tooling and workflows the right way",
     description:
       "Adopting AI-assisted development or internal AI tooling haphazardly creates as many problems as it solves. We help your team set up the tools, workflows, and guardrails so adoption actually sticks.",
@@ -88,7 +93,8 @@ export const solutions: Solution[] = [
   },
   {
     slug: "codebase-improvement",
-    title: "Existing Codebase Improvement",
+    title: "Codebase Modernization",
+    category: "Existing Codebase Improvement",
     headline: "A second set of senior eyes on your existing system",
     description:
       "Not every engagement starts from zero. We drop into an existing codebase for audits, refactors, and ongoing feature development, bringing senior-level judgment to a system someone else already built.",
