@@ -35,8 +35,9 @@ export default function AboutPage() {
           to be the call a company makes before a big technical decision, not after.
         </p>
         <p>
-          The founder spent over a decade in engineering, starting as a new-grad at Microsoft and
-          reaching Senior Software Engineer within three years, then building core payments
+          The founder spent over a decade in engineering, starting as an intern at Microsoft and
+          reaching Senior Software Engineer within three years of joining full-time, then building
+          core payments
           infrastructure as a senior engineer at Stripe on systems that processed billions of
           dollars in transactions a day, then back to Microsoft as a Principal Software Engineer (
           <a
