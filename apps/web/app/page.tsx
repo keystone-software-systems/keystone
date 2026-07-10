@@ -121,11 +121,11 @@ export default function Home() {
           </h2>
           <p className="mt-4 max-w-2xl text-lg text-blueprint-navy">
             Keystone Systems is led by a software engineer who previously spent over a decade in
-            engineering roles at Microsoft and Stripe, most recently as a Principal Software
-            Engineer, building production systems that processed billions of dollars in
-            transactions a day. That background shapes how engagements are scoped: long-term
-            defensibility, architecture tradeoffs, and systems built to hold up under real load,
-            not just a demo.
+            engineering roles at Microsoft and Stripe, including as a Principal Software Engineer
+            at Microsoft and a Senior Software Engineer at Stripe, building production systems
+            that processed billions of dollars in transactions a day. That background shapes how
+            engagements are scoped: long-term defensibility, architecture tradeoffs, and systems
+            built to hold up under real load, not just a demo.
           </p>
           <Link
             href="/about"

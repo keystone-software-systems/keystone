@@ -3,59 +3,60 @@
 import { useEffect, useState } from "react";
 
 const QUESTIONS = [
-  "Have a decision that's expensive to get wrong?",
-  "Not sure your AI-built prototype will hold up under real users?",
-  "About to acquire a company and need to know what's actually in the codebase?",
-  "Buried in manual work that should have been automated months ago?",
-  "Rolling out AI tooling without a plan for how it should be used?",
-  "Sitting on a codebase no one on the team fully understands anymore?",
+  "Building something you don't want to redo in a year?",
+  "Not sure your AI prototype will hold up?",
+  "Need to know what you're buying before you close?",
+  "Drowning in manual work that should be automated?",
+  "Not sure your team's using AI coding tools well?",
+  "Scaling up and worried your codebase can't keep up?",
 ];
 
-const INTERVAL_MS = 5000;
-const FLIP_MS = 450;
+const INTERVAL_MS = 7000;
+const SLIDE_MS = 550;
 
-type Phase = "resting" | "leaving" | "entering";
+type Phase = "resting" | "sliding";
 
 export function RotatingQuestion() {
   const [index, setIndex] = useState(0);
   const [phase, setPhase] = useState<Phase>("resting");
 
+  const nextIndex = (index + 1) % QUESTIONS.length;
+  const sliding = phase === "sliding";
+
   useEffect(() => {
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
 
-    let midTimeout: ReturnType<typeof setTimeout>;
-    let frame: number;
+    let slideTimeout: ReturnType<typeof setTimeout>;
 
     const interval = setInterval(() => {
-      setPhase("leaving");
-      midTimeout = setTimeout(() => {
+      setPhase("sliding");
+      slideTimeout = setTimeout(() => {
         setIndex((i) => (i + 1) % QUESTIONS.length);
-        setPhase("entering");
-        frame = requestAnimationFrame(() => setPhase("resting"));
-      }, FLIP_MS);
+        setPhase("resting");
+      }, SLIDE_MS);
     }, INTERVAL_MS);
 
     return () => {
       clearInterval(interval);
-      clearTimeout(midTimeout);
-      cancelAnimationFrame(frame);
+      clearTimeout(slideTimeout);
     };
   }, []);
 
+  const transition = sliding ? `transform ${SLIDE_MS}ms cubic-bezier(0.65, 0, 0.35, 1)` : "none";
+
   return (
-    <div className="min-h-[4rem] sm:min-h-[5rem]" style={{ perspective: "600px" }}>
+    <div className="relative grid overflow-hidden">
       <h2
-        className="text-2xl font-semibold text-blueprint-navy sm:text-3xl"
-        style={{
-          transformOrigin: "50% 50%",
-          backfaceVisibility: "hidden",
-          transform: `rotateX(${phase === "leaving" ? "-90deg" : phase === "entering" ? "90deg" : "0deg"})`,
-          opacity: phase === "resting" ? 1 : 0,
-          transition:
-            phase === "entering" ? "none" : `transform ${FLIP_MS}ms ease-in, opacity ${FLIP_MS}ms ease-in`,
-        }}
+        className="col-start-1 row-start-1 flex items-center justify-center text-center text-2xl font-semibold text-blueprint-navy sm:text-3xl"
+        style={{ transform: `translateY(${sliding ? "-100%" : "0%"})`, transition }}
       >
         {QUESTIONS[index]}
+      </h2>
+      <h2
+        className="col-start-1 row-start-1 flex items-center justify-center text-center text-2xl font-semibold text-blueprint-navy sm:text-3xl"
+        style={{ transform: `translateY(${sliding ? "0%" : "100%"})`, transition }}
+      >
+        {QUESTIONS[nextIndex]}
       </h2>
     </div>
   );
