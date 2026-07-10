@@ -14,8 +14,9 @@ export default function ContactPage() {
         Talk through your situation
       </h1>
       <p className="mt-4 text-lg text-blueprint-navy/70">
-        Tell us what you&apos;re working on and what decision you&apos;re facing. We&apos;ll get back to you to
-        set up a call.
+        Tell us what you&apos;re working on and what decision you&apos;re facing. The first conversation is
+        about scoping the problem; pricing follows from that scope, agreed up front, not an hourly clock.
+        We&apos;ll get back to you to set up a call.
       </p>
       <div className="mt-10">
         <ContactForm />

@@ -9,21 +9,36 @@ export const metadata: Metadata = {
   alternates: { canonical: "/" },
 };
 
-const steps = [
+const principles = [
   {
-    title: "Scope",
+    title: "Priced to outcome",
     description:
-      "We start by understanding the problem, not the tech stack. What's the decision that's expensive to get wrong, and what does a good outcome look like?",
+      "Priced to the outcome up front, not billed hourly. That keeps us both pulling for the fastest path to done, not the longest one.",
   },
   {
-    title: "Build / Advise",
+    title: "Senior, hands-on",
     description:
-      "Hands-on engineering or hands-on advising, depending on what the engagement calls for. Either way, you get direct senior involvement, not delegated work.",
+      "Direct senior engineering or advising, whatever the engagement calls for. Never delegated to someone more junior.",
   },
   {
-    title: "Handoff",
+    title: "Problem first",
     description:
-      "A clean handoff to your team, with documentation and context, not a black box you're dependent on us to maintain.",
+      "We scope the actual decision at hand, not the tech stack. What's expensive to get wrong, and what does a good outcome look like?",
+  },
+  {
+    title: "Scoped to fit",
+    description:
+      "A few days of diligence, a multi-month build, or an open-ended retainer. The shape follows the situation, not a fixed package.",
+  },
+  {
+    title: "No black box",
+    description:
+      "Most engagements end with a clean handoff, documentation included. Some continue as an ongoing or fractional arrangement instead. Either way, you're never dependent on us to maintain what we built.",
+  },
+  {
+    title: "Easy to start",
+    description:
+      "No RFP, no procurement process. Engagements start with a conversation about the actual situation, and nothing's committed until scope and price are clear.",
   },
 ];
 
@@ -56,9 +71,10 @@ export default function Home() {
               Senior engineering judgment, without the full-time hire
             </h1>
             <p className="mt-6 text-lg text-blueprint-navy/70">
-              From new builds to production-hardening to technical due diligence, Keystone Systems
-              brings staff-level engineering judgment to the decisions that are expensive to get
-              wrong and hard to undo later.
+              AI tools made code cheap to produce. They didn&apos;t make it easier to know if it&apos;s
+              sound. Keystone Systems brings senior engineering judgment to the decisions that are
+              expensive to get wrong and hard to undo later, from new builds to
+              production-hardening to technical due diligence.
             </p>
             <div className="mt-8 flex flex-wrap gap-4">
               <Link
@@ -86,12 +102,11 @@ export default function Home() {
           <h2 className="text-sm font-semibold uppercase tracking-wide text-technical-blue">
             How we work
           </h2>
-          <div className="mt-6 grid gap-8 sm:grid-cols-3">
-            {steps.map((step, i) => (
-              <div key={step.title}>
-                <span className="text-sm font-semibold text-blueprint-navy/70">0{i + 1}</span>
-                <h3 className="mt-2 text-lg font-semibold text-blueprint-navy">{step.title}</h3>
-                <p className="mt-2 text-sm text-blueprint-navy/70">{step.description}</p>
+          <div className="mt-6 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+            {principles.map((principle) => (
+              <div key={principle.title}>
+                <h3 className="text-lg font-semibold text-blueprint-navy">{principle.title}</h3>
+                <p className="mt-2 text-sm text-blueprint-navy/70">{principle.description}</p>
               </div>
             ))}
           </div>
@@ -120,12 +135,12 @@ export default function Home() {
             About the founder
           </h2>
           <p className="mt-4 max-w-2xl text-lg text-blueprint-navy">
-            Keystone Systems is led by a software engineer who previously spent over a decade in
-            engineering roles at Microsoft and Stripe, including as a Principal Software Engineer
-            at Microsoft and a Senior Software Engineer at Stripe, building production systems
-            that processed billions of dollars in transactions a day. That background shapes how
-            engagements are scoped: long-term defensibility, architecture tradeoffs, and systems
-            built to hold up under real load, not just a demo.
+            Keystone Systems is led by a software engineer with over a decade of experience, most
+            recently as a Principal Software Engineer at Microsoft, and before that building core
+            payments infrastructure as a senior engineer at Stripe on systems that processed
+            billions of dollars in transactions a day. That background shapes how engagements are
+            scoped: long-term defensibility, architecture tradeoffs, and systems built to hold up
+            under real load, not just a demo.
           </p>
           <Link
             href="/about"

@@ -23,18 +23,18 @@ export const solutions: Solution[] = [
     slug: "vibe-code-to-production",
     title: "Production Hardening",
     category: "Vibe-Code to Production",
-    headline: "Take your AI-generated prototype to production, safely",
+    headline: "Find out what's actually solid before real users do",
     description:
-      "AI tools make it easy to get a working prototype fast. They don't make it production-ready, and they don't tell you whether it'll hold up if usage takes off. We audit what's there, fix the parts that will break under real users, and harden the system so it can handle real growth, not just a demo.",
+      "AI tools make it easy to ship a working prototype fast. They don't know what they don't know, and they won't tell you which parts are about to break, because they're built to say yes. We audit the codebase, name exactly what's solid and what isn't, and fix what needs fixing before real users or a funding round put weight on a foundation that can't hold it.",
     whoFor: [
       "Non-technical or semi-technical founders with a working AI-built MVP",
-      "Teams that vibe-coded a prototype and now have real users or funding",
-      "Anyone unsure whether their prototype's foundation will hold up",
+      "Teams with real users or a funding round riding on a prototype they can't fully vouch for",
+      "Anyone who can't tell if their AI-built product is a solid foundation or a house of cards",
     ],
     whatYouGet: [
-      "A clear-eyed technical assessment of what's solid and what isn't",
+      "A specific list of what's solid, what's broken, and what it costs to fix",
       "Fixes to the architecture, data model, and security gaps that matter most",
-      "A system that's ready for real users and real growth, not just a demo",
+      "A system that holds up under real users and real growth, not just a demo",
     ],
   },
   {
@@ -61,16 +61,16 @@ export const solutions: Solution[] = [
     category: "Acquisition Due Diligence",
     headline: "Know what you're buying before you close",
     description:
-      "An independent technical assessment of a target company's codebase, architecture, and engineering risk, delivered before the deal closes. We look at what a buyer actually needs to know: technical debt, scalability, security posture, and the true cost of maintaining what's there.",
+      "An independent technical assessment of a target company's codebase, architecture, and engineering risk, delivered before the deal closes. This is the cheapest point in the deal to catch a serious problem: after you sign, a bad data model, a security gap, or years of unpaid technical debt becomes your problem to fix, not a reason to walk away. We look at what a buyer actually needs to know: technical debt, scalability, security posture, and the true cost of maintaining what's there.",
     whoFor: [
       "Buyers and investors evaluating a software-driven acquisition",
       "Private equity and holding companies doing technical inspection ahead of a deal",
-      "Anyone who needs a second, independent set of senior technical eyes before closing",
+      "Anyone who needs a technical answer before signing, not a gut feeling",
     ],
     whatYouGet: [
-      "A written technical risk assessment of the target's codebase and architecture",
-      "A clear view of technical debt and what it will cost to address",
-      "Findings delivered on your deal timeline",
+      "A written risk assessment naming exactly what's solid, what's broken, and what it costs to fix",
+      "A clear view of technical debt and the true cost of maintaining what's there",
+      "Findings delivered on your deal timeline, before you sign",
     ],
   },
   {
@@ -97,7 +97,7 @@ export const solutions: Solution[] = [
     category: "Existing Codebase Improvement",
     headline: "A second set of senior eyes on your existing system",
     description:
-      "Not every engagement starts from zero. We drop into an existing codebase for audits, refactors, and ongoing feature development, bringing senior-level judgment to a system someone else already built.",
+      "Not every engagement starts from zero. Technical debt is cheap to fix early and expensive to fix after it's caused an outage or blocked a launch. We drop into an existing codebase for audits, refactors, and ongoing feature development, bringing senior-level judgment to a system someone else already built.",
     whoFor: [
       "Teams with an existing codebase who need outside senior help",
       "Companies without a long-term hiring commitment who still need staff-level judgment",
