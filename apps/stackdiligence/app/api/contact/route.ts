@@ -1,26 +1,17 @@
 import { NextResponse } from "next/server";
 import { Resend } from "resend";
 
-const SERVICE_LABELS: Record<string, string> = {
-  "net-new-development": "Net New Development",
-  "vibe-code-to-production": "Vibe-Code to Production",
-  "business-process-automation": "Business Process Automation",
-  "ai-training-setup": "AI Training & Setup",
-  "codebase-improvement": "Existing Codebase Improvement",
-  other: "Not sure / other",
-};
-
 export async function POST(request: Request) {
   const body = await request.json().catch(() => null);
   const name = typeof body?.name === "string" ? body.name.trim() : "";
   const email = typeof body?.email === "string" ? body.email.trim() : "";
-  const company = typeof body?.company === "string" ? body.company.trim() : "";
-  const service = typeof body?.service === "string" ? body.service.trim() : "";
+  const firm = typeof body?.firm === "string" ? body.firm.trim() : "";
+  const timeline = typeof body?.timeline === "string" ? body.timeline.trim() : "";
   const message = typeof body?.message === "string" ? body.message.trim() : "";
 
   if (!name || !email || !message) {
     return NextResponse.json(
-      { error: "Name, email, and message are required." },
+      { error: "Name, email, and a brief deal description are required." },
       { status: 400 },
     );
   }
@@ -39,20 +30,19 @@ export async function POST(request: Request) {
   }
 
   const resend = new Resend(apiKey);
-  const fromEmail = process.env.RESEND_FROM_EMAIL ?? "Keystone Systems <onboarding@resend.dev>";
+  const fromEmail = process.env.RESEND_FROM_EMAIL ?? "StackDiligence <onboarding@resend.dev>";
   const toEmail = process.env.CONTACT_TO_EMAIL ?? "tanner@propdog.ai";
-  const serviceLabel = SERVICE_LABELS[service] ?? "Not specified";
 
   const { error } = await resend.emails.send({
     from: fromEmail,
     to: toEmail,
     replyTo: email,
-    subject: `New inquiry from ${name}${company ? ` (${company})` : ""}`,
+    subject: `New inquiry from ${name}${firm ? ` (${firm})` : ""}`,
     text: [
       `Name: ${name}`,
       `Email: ${email}`,
-      `Company: ${company || "Not provided"}`,
-      `Service interest: ${serviceLabel}`,
+      `Firm: ${firm || "Not provided"}`,
+      `Timeline: ${timeline || "Not provided"}`,
       "",
       message,
     ].join("\n"),

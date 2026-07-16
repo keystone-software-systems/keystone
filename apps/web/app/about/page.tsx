@@ -69,8 +69,8 @@ export default function AboutPage() {
           Keystone Systems isn&apos;t a dev shop. It doesn&apos;t compete on
           headcount, cheap hourly rates, or speed of delivery alone. It competes
           on the quality of technical decisions made early, which is what
-          prevents expensive rework later. Because the firm covers six distinct
-          service lines, from net-new builds to due diligence to AI adoption,
+          prevents expensive rework later. Because the firm covers five distinct
+          service lines, from net-new builds to AI adoption,
           it&apos;s best understood as a technical judgment and systems-advisory
           practice, not narrowly as &ldquo;a software development shop.&rdquo;
         </p>

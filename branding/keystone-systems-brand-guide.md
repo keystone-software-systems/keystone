@@ -2,7 +2,7 @@
 
 ## Positioning
 
-Keystone Systems is a software engineering consultancy providing architecture, technical strategy, and senior-level engineering judgment for growing companies. The founder is a former Principal/Staff-level engineer (Stripe, Microsoft). The brand should read as established, credible, and technical — a systems-advisory firm, not a narrow "we write code" shop. It supports a range of engagement types: net-new development, hardening AI-generated/prototype code for production, business process automation, technical due diligence for acquisitions, and AI training & setup.
+Keystone Systems is a software engineering consultancy providing architecture, technical strategy, and senior-level engineering judgment for growing companies. The founder is a former Principal/Staff-level engineer (Stripe, Microsoft). The brand should read as established, credible, and technical — a systems-advisory firm, not a narrow "we write code" shop. It supports a range of engagement types: net-new development, hardening AI-generated/prototype code for production, business process automation, and AI training & setup.
 
 Tone reference points: Stripe, Vercel, Linear — precise, restrained, no startup-mascot energy, no gradients or glow effects.
 

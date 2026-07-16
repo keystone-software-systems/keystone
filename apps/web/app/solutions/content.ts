@@ -56,24 +56,6 @@ export const solutions: Solution[] = [
     ],
   },
   {
-    slug: "acquisition-due-diligence",
-    title: "Due Diligence",
-    category: "Acquisition Due Diligence",
-    headline: "Know what you're buying before you close",
-    description:
-      "An independent technical assessment of a target company's codebase, architecture, and engineering risk, delivered before the deal closes. This is the cheapest point in the deal to catch a serious problem: after you sign, a bad data model, a security gap, or years of unpaid technical debt becomes your problem to fix, not a reason to walk away. We look at what a buyer actually needs to know: technical debt, scalability, security posture, and the true cost of maintaining what's there.",
-    whoFor: [
-      "Buyers and investors evaluating a software-driven acquisition",
-      "Private equity and holding companies doing technical inspection ahead of a deal",
-      "Anyone who needs a technical answer before signing, not a gut feeling",
-    ],
-    whatYouGet: [
-      "A written risk assessment naming exactly what's solid, what's broken, and what it costs to fix",
-      "A clear view of technical debt and the true cost of maintaining what's there",
-      "Findings delivered on your deal timeline, before you sign",
-    ],
-  },
-  {
     slug: "ai-training-setup",
     title: "AI Training",
     category: "AI Training & Setup",

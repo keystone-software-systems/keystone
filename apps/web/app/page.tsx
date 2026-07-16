@@ -74,7 +74,7 @@ export default function Home() {
               AI tools made code cheap to produce. They didn&apos;t make it easier to know if it&apos;s
               sound. Keystone Systems brings senior engineering judgment to the decisions that are
               expensive to get wrong and hard to undo later, from new builds to
-              production-hardening to technical due diligence.
+              production-hardening to AI adoption.
             </p>
             <div className="mt-8 flex flex-wrap gap-4">
               <Link
@@ -119,7 +119,7 @@ export default function Home() {
             Solutions
           </h2>
           <p className="mt-2 max-w-2xl text-lg text-blueprint-navy">
-            Six ways to bring in senior engineering judgment, scoped to a specific moment.
+            Ways to bring in senior engineering judgment, scoped to a specific moment.
           </p>
           <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {solutions.map((solution) => (

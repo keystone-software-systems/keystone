@@ -70,11 +70,6 @@ share a runtime, a domain, or a set of secrets.
 Suggested host: `admin.keystone.systems` (or a Vercel-generated URL behind auth — no public link
 from the marketing site).
 
-> **Open decision:** if this is meant to become the Scaleyard back-office (see company context —
-> Scaleyard is a separate venture with payments/contracts/e-signature tooling) rather than a
-> Keystone-only tool, it should probably be its own repo. Designed here as Keystone-internal in
-> this monorepo; relocating is cheap while it is early.
-
 ### Stack (matches `apps/web`)
 
 | Concern | Choice |
@@ -674,7 +669,7 @@ extending. Scoped in §8 and `docs/admin-tool-notion-workspace.md`.
 **Resolved (2026-07):**
 
 1. **Repo boundary.** *Keystone-internal in this monorepo as `apps/admin`*, deployed as a separate
-   Vercel project. Relocatable later if it becomes the Scaleyard back-office.
+   Vercel project.
 2. **Auth method.** *Email magic link* at launch (no external OAuth app to set up); Google can be
    added later.
 3. **Users at launch.** *Founder-only.* Seed the founder as `owner`; defer the `staff`/`viewer`

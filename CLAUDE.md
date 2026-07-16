@@ -1,31 +1,32 @@
-# Keystone Systems — Repo Instructions
+# Keystone Systems / StackDiligence — Repo Instructions
 
-Marketing site for **Keystone Systems**, a solo/founder-led software engineering consultancy.
-This repo is unrelated to Land Catalyst/PropDog.ai — treat it as a separate client context even
-though the same person operates both.
+This monorepo holds two marketing sites for two separate brands/entities run by the same
+founder: **Keystone Systems** (`apps/web`) and **StackDiligence** (`apps/stackdiligence`). This
+repo is unrelated to Land Catalyst/PropDog.ai — treat it as a separate client context even though
+the same person operates both.
 
-Full business context lives in `docs/company-context.md` — read it before writing any copy,
-not just this summary.
+Full business context for Keystone lives in `docs/company-context.md`; StackDiligence's spec is
+in `docs/stack-diligence-init.md`. Read the relevant one before writing any copy, not just this
+summary.
 
-## What Keystone Systems Is
+## Keystone Systems (`apps/web`)
 
 One-line pitch: **senior engineering judgment, without the full-time hire.** The founder
 (Senior/Staff-level engineer, background at Stripe and Microsoft) sells judgment applied at a
 specific, well-scoped moment — not staff augmentation, not "AI-assisted development" as a
 headline claim.
 
-**Six service lines** (`apps/web/app/solutions/content.ts`):
+**Five service lines** (`apps/web/app/solutions/content.ts`):
 1. Net New Development
 2. Vibe-Code to Production
 3. Business Process Automation
-4. Acquisition Due Diligence
-5. AI Training & Setup
-6. Existing Codebase Improvement
+4. AI Training & Setup
+5. Existing Codebase Improvement
 
 **Engagement model:** priced to the outcome, not hourly. Handoff is the default; fractional-CTO
 retainers are available but not the default framing.
 
-## Copy Guardrails — read before editing any user-facing text
+### Copy Guardrails (Keystone) — read before editing any user-facing text
 
 These are hard constraints from `docs/company-context.md`, not style preferences:
 
@@ -47,9 +48,6 @@ These are hard constraints from `docs/company-context.md`, not style preferences
   small network of equally experienced independent engineers" — keep it generic.
 - **No social proof** (testimonials, case studies, before/after) until real client examples
   exist and are cleared to share.
-- **Keystone/Scaleyard are separate brands** — don't conflate them in copy. Scaleyard
-  (scaleyard.io) is the founder's other venture, a platform for independent consultants; it is
-  not Keystone Systems.
 - The name's personal meaning to the founder is private — never explain "what Keystone means"
   in copy, and avoid anything that reads as religious/denominational.
 
@@ -57,30 +55,54 @@ When in doubt about copy, check `docs/todo.md` for open decisions before locking
 several things (support terms, bench depth, social proof) are intentionally left vague pending a
 founder decision.
 
-## Visual/Brand Direction
+### Visual/Brand Direction (Keystone)
 
 Full detail in `branding/keystone-systems-brand-guide.md`. Summary: clean, minimal, geometric —
 closer to Stripe/Linear/Vercel than a creative agency. Monochrome-first with a single accent
 color (Blueprint Navy `#14324D`, Technical Blue `#3E7CB1`). No gradients, glow effects, mascots,
 or literal stone/arch imagery.
 
+## StackDiligence (`apps/stackdiligence`)
+
+One-line pitch: technical due diligence for software acquisitions — a full-stack assessment of
+what a buyer is actually buying, delivered in plain deal-language for PE/VC deal teams without
+in-house technical staff. Full spec in `docs/stack-diligence-init.md`. Separate LLC/entity from
+Keystone Systems (see the entity-setup checklist in that doc) — **don't conflate the two brands
+in copy**, and don't share components/content between `apps/web` and `apps/stackdiligence`.
+
+Same house style as Keystone's guardrails above: no superlatives, no em dashes, no invented
+numbers for pricing or a support/disclaimer window until decided. The Cedar/current-job rule
+applies here too — it's the same founder, so never mention Cedar or a current other job in
+StackDiligence copy either.
+
+### Visual/Brand Direction (StackDiligence)
+
+No formal brand guide yet — placeholder palette, distinct from Keystone's Blueprint Navy so the
+two sites never read as the same company: Graphite `#1E2328` (primary), Ledger Green `#4B6357`
+(accent). Same restrained Stripe/Linear tone as Keystone. Text-based wordmark only for now (no
+icon mark) — revisit if/when real brand work happens.
+
 ## Stack & Structure
 
-- **Monorepo:** npm workspaces, single app at `apps/web`
-- **Framework:** Next.js 16 App Router, static generation
-- **Styling:** Tailwind CSS v4, brand palette as CSS variables
+- **Monorepo:** npm workspaces, two apps: `apps/web` (Keystone) and `apps/stackdiligence`
+  (StackDiligence)
+- **Framework:** Next.js 16 App Router, static generation, for both apps
+- **Styling:** Tailwind CSS v4, brand palette as CSS variables (each app has its own palette)
 - **Font:** Inter via `next/font/google`
-- **Contact form:** Resend, single API route (`apps/web/app/api/contact/route.ts`)
-- **Deployment:** Vercel, native GitHub integration (Root Directory = `apps/web`). No deploy
-  step in CI — `.github/workflows/ci.yml` runs typecheck/lint/build only.
+- **Contact form:** Resend, one API route per app (`app/api/contact/route.ts`) — separate
+  from/to addresses per brand
+- **Deployment:** Vercel, native GitHub integration, one Vercel project per app (Root Directory
+  = `apps/web` or `apps/stackdiligence`). No deploy step in CI — `.github/workflows/ci.yml` runs
+  typecheck/lint/build only.
 
 ```
-apps/web/     Next.js site — see apps/web/CLAUDE.md for Next.js-16-specific rules
-branding/     Logo SVGs + brand guide
-docs/         Company context, build plan, open TODOs, landing page prompt
+apps/web/             Keystone Systems site — see apps/web/CLAUDE.md for Next.js-16-specific rules
+apps/stackdiligence/  StackDiligence site — same Next.js-16 rules via its own CLAUDE.md
+branding/             Keystone logo SVGs + brand guide
+docs/                 Company context, build plan, open TODOs, StackDiligence spec
 ```
 
-`apps/web` has its own `CLAUDE.md` (Next.js 16 breaking-change warning — read the bundled docs
+Both apps have their own `CLAUDE.md` (Next.js 16 breaking-change warning — read the bundled docs
 in `node_modules/next/dist/docs/` before writing Next.js code, don't assume training-data APIs).
 
 ## Commands
@@ -89,20 +111,22 @@ Run from repo root (workspace-aware):
 
 ```
 npm install
-npm run dev         # apps/web on localhost:3000
-npm run typecheck
-npm run lint
-npm run build
+npm run dev:web              # apps/web on localhost:3000
+npm run dev:stackdiligence   # apps/stackdiligence on localhost:3000 (run one at a time, same port)
+npm run typecheck            # both apps
+npm run lint                 # both apps
+npm run build                # both apps
 ```
 
 Run `npm run typecheck && npm run lint && npm run build` before considering any change done —
-this mirrors CI exactly.
+this mirrors CI exactly, across both apps.
 
 ## Conventions
 
-- TypeScript, functional components, App Router conventions throughout.
-- Solutions pages are template-driven off `apps/web/app/solutions/content.ts` — add/edit a
-  service there, not by hand-writing a new page.
-- `generateMetadata()` on every route; keep `app/sitemap.ts` and `app/robots.ts` in sync when
+- TypeScript, functional components, App Router conventions throughout, both apps.
+- Keystone's solutions pages are template-driven off `apps/web/app/solutions/content.ts` —
+  add/edit a service there, not by hand-writing a new page. StackDiligence has a single service
+  line, so its pages are hand-written (`apps/stackdiligence/app/*/page.tsx`), not template-driven.
+- `generateMetadata()` on every route; keep each app's `sitemap.ts` and `robots.ts` in sync when
   adding routes.
 - Minimal comments, no unnecessary abstraction — same house style as other Tanner projects.

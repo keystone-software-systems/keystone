@@ -41,7 +41,7 @@ The pricing logic follows an insurance framing without ever using the word insur
 
 ### Guardrails on how this gets said
 
-No superlatives ("world-class," "rockstar," "best-in-class," "amazing," "cutting-edge," "game-changing"). The substitute for all of these is a concrete noun phrase like "senior engineering judgment" or a named deliverable, never a toned-down version of the hype word. No "empower," "revolutionize," or vague transformation language; replace with the specific problem solved or the specific artifact delivered (a risk assessment, a fixed data model, a handoff document). State the Stripe/Microsoft credential once, plainly, in a single place; do not repeat or dramatize it elsewhere, and do not lead with AI capability as the headline hook since it is one of six service lines, not the identity of the firm. No em dashes, no exclamation points, no urgency language. Confidence comes from specificity (named deliverables, a stated engagement model, a stated decision-timing moment), not from adjectives.
+No superlatives ("world-class," "rockstar," "best-in-class," "amazing," "cutting-edge," "game-changing"). The substitute for all of these is a concrete noun phrase like "senior engineering judgment" or a named deliverable, never a toned-down version of the hype word. No "empower," "revolutionize," or vague transformation language; replace with the specific problem solved or the specific artifact delivered (a risk assessment, a fixed data model, a handoff document). State the Stripe/Microsoft credential once, plainly, in a single place; do not repeat or dramatize it elsewhere, and do not lead with AI capability as the headline hook since it is one of five service lines, not the identity of the firm. No em dashes, no exclamation points, no urgency language. Confidence comes from specificity (named deliverables, a stated engagement model, a stated decision-timing moment), not from adjectives.
 
 ---
 
@@ -55,22 +55,24 @@ The founder is a Senior/Staff-level software engineer, currently working remotel
 
 This background shapes the firm's actual differentiation: the founder thinks in terms of long-term defensibility, data moats, equity/architecture tradeoffs, and systems-level design — the kind of judgment that typically only comes from having built and scaled real infrastructure at large-scale technical organizations.
 
-The founder is also building a second, separate venture — **Scaleyard** (scaleyard.io) — a platform/marketplace for independent software consultants, with back-office tooling (payments, contracts, e-signature) and AI-assisted scoping. **Scaleyard and Keystone Systems are distinct entities**: Scaleyard is the platform/marketplace product; Keystone Systems is the founder's own personal consulting practice. They may cross-refer clients or share infrastructure over time, but they are not the same brand and should not be conflated in external-facing materials.
-
 ---
 
 ## Services / Revenue Streams
 
-Keystone Systems offers six categories of engagement:
+Keystone Systems offers five categories of engagement:
 
 1. **Net New Development** — greenfield software builds from scratch, for companies that need something built right the first time rather than fast and disposable.
 2. **Vibe-Code to Production** — taking AI-generated or prototype-stage code ("vibe-coded" MVPs) and hardening it into a production-ready, maintainable system. This is a growing category as more non-technical founders and teams build fast prototypes with AI tools but lack the engineering judgment to take them to production safely.
 3. **Business Process Automation** — identifying and automating manual, repetitive, or error-prone operational workflows inside a business.
-4. **Acquisition Due Diligence (including Technical Inspection)** — for buyers evaluating a software-driven acquisition, providing an independent technical assessment of the target's codebase, architecture, technical debt, and engineering risk before a deal closes.
-5. **AI Training & Setup** — helping teams and companies stand up AI tooling and workflows (e.g., AI-assisted development practices, internal AI adoption) rather than adopting it haphazardly.
-6. **Existing Codebase Improvement** — dropping into a company's existing codebase for audits, refactors, incremental feature development, and ongoing improvement — not just greenfield work.
+4. **AI Training & Setup** — helping teams and companies stand up AI tooling and workflows (e.g., AI-assisted development practices, internal AI adoption) rather than adopting it haphazardly.
+5. **Existing Codebase Improvement** — dropping into a company's existing codebase for audits, refactors, incremental feature development, and ongoing improvement — not just greenfield work.
 
-These six lines share a common thread: **judgment applied at a specific, well-scoped moment** — a new build, a fragile prototype, a messy workflow, an acquisition target, an AI rollout, or an existing system that needs a second set of senior eyes. None of them are "staff augmentation" in the traditional sense.
+These five lines share a common thread: **judgment applied at a specific, well-scoped moment** — a new build, a fragile prototype, a messy workflow, an AI rollout, or an existing system that needs a second set of senior eyes. None of them are "staff augmentation" in the traditional sense.
+
+Acquisition due diligence used to be a sixth Keystone line but has spun out as its own separate
+brand/entity, **StackDiligence** (see `docs/stack-diligence-init.md` and `apps/stackdiligence`) —
+not part of Keystone Systems going forward — kept as a distinct brand/entity rather than folded
+back in.
 
 ---
 
@@ -82,7 +84,7 @@ These six lines share a common thread: **judgment applied at a specific, well-sc
 ### Bench depth and post-handoff support (internal only, not yet public copy)
 
 - **Bench depth:** The founder has an established network of at least three other similarly experienced independent engineering consultants he can bring in if a timeline requires it. This is a real, standing working relationship, not a last-minute improvisation. As of this writing, the founder has **not decided** whether or how to state this publicly on the site — do not add it to any client-facing page without explicit confirmation.
-- **Post-handoff support window:** Not yet defined. The founder has not settled on specific terms (length of any bug-fix window, what's covered, how due-diligence engagements are handled differently from build/harden/automate/modernize engagements) and does not want to commit to specifics in copy yet. Do not state any support-window length, guarantee, or warranty language in public copy until this is explicitly decided.
+- **Post-handoff support window:** Not yet defined. The founder has not settled on specific terms (length of any bug-fix window, what's covered) and does not want to commit to specifics in copy yet. Do not state any support-window length, guarantee, or warranty language in public copy until this is explicitly decided.
 
 ---
 
@@ -90,7 +92,6 @@ These six lines share a common thread: **judgment applied at a specific, well-sc
 
 - Growing companies (startups through mid-size) that need principal/staff-level engineering judgment but don't have — or don't yet need — a full-time hire at that level
 - Non-technical or semi-technical founders who have a working AI-generated prototype and need it hardened for real users
-- Buyers/investors conducting technical diligence ahead of a software-related acquisition
 - Teams with an existing codebase who need outside, senior-level help without a long-term hiring commitment
 
 ---
@@ -99,7 +100,7 @@ These six lines share a common thread: **judgment applied at a specific, well-sc
 
 - **Not a dev shop.** The firm doesn't compete on headcount, cheap hourly rates, or speed-of-delivery alone. It competes on the quality of technical decisions made early, which is what prevents expensive rework later.
 - **Boring is a feature, not a bug.** The brand deliberately reads as understated and credible rather than flashy or "startup-trendy" — closer in tone to an established engineering firm than a scrappy agency. This is intentional: the target buyer (a CTO or founder evaluating a vendor) is reassured by steadiness, not entertained by branding.
-- **Broader than pure custom development.** Because of the six service lines above, Keystone Systems should be understood and marketed as a technical judgment / systems-advisory practice — encompassing build, harden, audit, automate, and advise — not narrowly as "a software development shop."
+- **Broader than pure custom development.** Because of the five service lines above, Keystone Systems should be understood and marketed as a technical judgment / systems-advisory practice — encompassing build, harden, audit, automate, and advise — not narrowly as "a software development shop."
 
 ---
 
