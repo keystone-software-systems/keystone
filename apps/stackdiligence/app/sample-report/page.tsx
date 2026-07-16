@@ -71,7 +71,14 @@ export default function SampleReportPage() {
       </div>
 
       <div className="mt-10 border-t border-slate/20 pt-8">
-        <h2 className="text-sm font-semibold uppercase tracking-wide text-graphite">Findings</h2>
+        <h2 className="text-sm font-semibold uppercase tracking-wide text-graphite">
+          Example Findings
+        </h2>
+        <p className="mt-2 text-sm text-graphite/70">
+          Three examples below, one per severity tier, to show the format. A real report isn&apos;t
+          capped at three: it lists every finding the target actually has, across all six
+          categories in What We Assess, however many or few that turns out to be.
+        </p>
         <div className="mt-6 flex flex-col gap-6">
           {findings.map((item) => (
             <div key={item.severity} className="rounded-md border border-slate/20 p-5">
@@ -92,11 +99,6 @@ export default function SampleReportPage() {
             </div>
           ))}
         </div>
-        <p className="mt-6 text-sm text-graphite/70">
-          A full report runs across all six categories in What We Assess, typically 10&ndash;25
-          findings depending on target size. These three, one per severity tier, are here to show
-          the format, not the full page count.
-        </p>
       </div>
 
       <p className="mt-10 text-graphite/70">
