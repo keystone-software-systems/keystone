@@ -67,6 +67,8 @@ graph LR
     style Public fill:#f5f5f5,stroke:#888,color:#333;
 ```
 
+![System map: how the six repositories interact](diagrams/system-map.png)
+
 ---
 
 ## The bill-processing flow, as I've reconstructed it
@@ -89,6 +91,8 @@ sequenceDiagram
     EX->>BE: POST progress/result to backend's audit log
     BE->>BE: match extracted data to resident account
 ```
+
+![Bill-processing flow: backend, scrape, and extract sequence](diagrams/bill-flow.png)
 
 ---
 
