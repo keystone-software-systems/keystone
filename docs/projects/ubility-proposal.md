@@ -41,22 +41,41 @@ this week and be delivered as a concrete, itemized list of what was fixed.
 
 ### 2a. Stop the bleeding (first, on its own if you prefer)
 
-The handful of issues that are exposed right now and cheap to close as a first pass: rotating credentials
-that are currently sitting in the codebase, taking real financial figures off a public-facing site, and
-closing a couple of endpoints that can currently be triggered by anyone.
+The handful of issues that are exposed right now and cheap to close as a first pass:
 
-- **Scope:** the immediate-exposure items only
+- **Rotate the credentials sitting in the codebase.** Passwords and API keys are currently stored in plain
+  text where they shouldn't be. Rotate them and put the new ones somewhere safe.
+- **Take real financial figures off a public-facing site.** Some sensitive numbers are visible on a public
+  page today. Pull them down as an immediate stopgap.
+- **Close the endpoints anyone can trigger.** A couple of entry points can be hit by anyone on the internet
+  and run up cost. Lock them behind a basic check.
+
+- **Scope:** the immediate-exposure items above
 - **Timing:** delivered within the week
 - **Price:** $4,500 flat
 
 ### 2b. Full remediation
 
-The complete set of confirmed findings: request-level authentication on the API, fixing the
-server-side-request issues (including one path that could expose real customer bill data), moving access
-tokens out of URLs, an access-control fix on bill images, purging committed secrets from history, and
-moving secrets into proper secret management.
+The complete set of confirmed findings, delivered as a named checklist of what was fixed:
 
-- **Scope:** all confirmed findings from the review, delivered as a named checklist of what was fixed
+- **Real login-based access control on the API.** Today a single shared key, which also ships to every
+  visitor's browser, is enough to reach parts of the system. Replace it with proper per-user access.
+- **Lock down the endpoints anyone can call.** Beyond the quick stopgap above, put real access control on
+  the entry points that trigger paid third-party work or send email.
+- **Stop the server fetching untrusted web addresses.** One version of this could be used to reach real
+  customer bill data. Restrict what the server is allowed to fetch.
+- **Get access tokens out of web addresses.** Login and file-access tokens currently ride in the URL, where
+  they leak into logs and browser history. Move them somewhere they can't be lifted.
+- **Fix the bill-image access gap.** A bill-download link can currently be guessed to view another
+  resident's bill. Add an ownership check.
+- **Move all secrets into proper secret management,** and scrub the old ones out of the code history so they
+  can't be recovered.
+- **Rebuild the investor page's access control on the server,** so confidential figures aren't sent to
+  every visitor and simply hidden in the browser.
+- **Clean up the repositories:** remove committed dependency files and dead binaries, and fix the settings
+  that let secrets get committed in the first place.
+
+- **Scope:** all confirmed findings from the review
 - **Timing:** roughly four to five weeks of focused work, dependent on timely access and approvals from
   your side for credential rotation
 - **Price:** $32,000 flat, or $35,000 including 2a if done as one engagement
