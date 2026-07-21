@@ -84,11 +84,11 @@ larger.
 
 For keeping the platform stable and responsive without committing to a development roadmap.
 
-- 15 to 20 hours per month of reserved senior engineering time
+- Reserved senior engineering time each month for maintenance and incident response
 - On-call coverage for production-impacting issues
 - Ongoing security hygiene: dependency checks, credential rotation, monitoring for the class of issues
   found in the review
-- A short written summary each month of what was fixed or checked
+- A regular check-in to review anything addressed and flag what to keep an eye on
 
 **For:** bug fixes, incident response, keeping the lights on. Not new features.
 
@@ -100,16 +100,14 @@ For continuing to build: new features, AI-assisted invoice and billing capabilit
 architecture changes that make the platform easier to scale over time (for example, moving business logic
 out of SQL stored procedures where it's currently hardest to maintain and test).
 
-- A committed monthly scope of work, agreed upfront rather than billed by the hour, sized to roughly 10 to
-  15 hours a week depending on tier
+- A committed monthly scope of work, agreed up front and reviewed as we go, rather than billed by the hour
 - Maintenance and on-call coverage folded in at no extra charge, since the work is already embedded in the
   codebase week to week
-- A weekly check-in on status and priorities
-- A written summary each month of what shipped
+- A weekly working meeting to go over what was built or shipped that week and line up the next priorities
 
 **Price:**
-- Standard scope (~10 hrs/week): $12,000/month
-- Expanded scope (~15 hrs/week): $18,000/month
+- Standard: $12,000/month, a steady cadence of fixes, improvements, and new feature work
+- Expanded: $18,000/month, a faster build cadence for when there's more to ship
 
 ### On the Blue Step quote
 
@@ -120,11 +118,11 @@ That's a different kind of offer: full-time headcount, bundled with moving your 
 It can make sense if what Ubility needs is someone to close tickets at volume and the hosting move is
 acceptable. What it doesn't include is the judgment call that matters most for a codebase like this one:
 knowing which shortcuts are safe and which ones turn into an outage or a lost customer six months later.
-That's the same gap the security review surfaced, and full-time junior hours don't substitute for it
-regardless of how many of them there are.
+That's the same gap the security review surfaced, and a junior working full-time doesn't substitute for it
+regardless of how much time is put in.
 
-The retainers above are priced for fewer hours than a full-time hire, with no hosting change required. The
-tradeoff is time in seat versus experience applied to the decisions that are expensive to get wrong.
+The retainers above cost well under a full-time hire, with no hosting change required. The tradeoff is time
+in seat versus experience applied to the decisions that are expensive to get wrong.
 
 ---
 
@@ -145,9 +143,9 @@ tradeoff is time in seat versus experience applied to the decisions that are exp
 - **Billing:** invoiced monthly, in advance, due at the start of each service month
 - **Term:** 3-month minimum initial term, month-to-month after that
 - **Notice:** 30 days to cancel after the initial term
-- **Out-of-scope work:** anything beyond the agreed monthly scope, or outside a fixed project's boundary,
-  billed at $275/hour by prior agreement
-- **Summary:** a written monthly summary of what was done
+- **Scope changes:** work beyond the agreed monthly scope is handled by agreeing on the next block of work
+  up front, not billed piecemeal
+- **Review:** a weekly working meeting to go over what was built or shipped and set the next priorities
 
 ### Both
 
@@ -161,11 +159,13 @@ tradeoff is time in seat versus experience applied to the decisions that are exp
 >   line.
 > - Deposit on the security work filters for a serious client and protects you from doing a multi-week flat
 >   project fully in arrears.
-> - $275/hr overage is consistent with the effective rate on the development retainer in `ubility.md`. It
->   exists to protect the flat pricing, not as a profit center.
+> - No hour counts or hourly overage anywhere client-facing, by design. Tanner is selling committed
+>   outcomes and is not reporting time. Scope creep is handled by agreeing the next block of work, not an
+>   hourly true-up. The weekly meeting is the accountability mechanism in place of a timesheet or written
+>   report: it shows progress through what shipped, not hours logged.
 > - Levers to give if he pushes on price, in order of preference: smaller deposit, longer term commitment
->   (6 or 12 months) for a modest discount, bundling 2a into full remediation. Avoid visibly cutting the
->   day-rate math.
+>   (6 or 12 months) for a modest discount, bundling 2a into full remediation. Avoid reintroducing any
+>   hours- or day-rate framing to justify a discount.
 
 ---
 
