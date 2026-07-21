@@ -60,8 +60,11 @@ graph LR
     MKT -.->|"contact-form submission<br/>(target not confirmed)"| EXT1["? external / unconfirmed"]
     AI -.->|"investor login<br/>(route shape matches c4-backend,<br/>not confirmed)"| BE
 
-    style Public fill:#f5f5f5,stroke:#999
-    style Pipelines fill:#f5f5f5,stroke:#999
+    classDef node fill:#e8eef4,stroke:#14324D,color:#14324D;
+    class FE,BE,SCRAPE,EXTRACT,MKT,AI,EXT1 node;
+    style Product fill:#ffffff,stroke:#14324D,color:#14324D;
+    style Pipelines fill:#f5f5f5,stroke:#888,color:#333;
+    style Public fill:#f5f5f5,stroke:#888,color:#333;
 ```
 
 ---
